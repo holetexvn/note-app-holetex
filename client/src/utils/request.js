@@ -1,5 +1,4 @@
-import { GRAPHQL_SERVER, GRAPHQL_SUBSCRIPTION_ENDPOINT } from './constants';
-import { SubscriptionClient } from 'graphql-subscriptions-client';
+import { GRAPHQL_SERVER } from './constants';
 import { createClient } from 'graphql-ws';
 
 const client = createClient({
