@@ -1,20 +1,16 @@
 import { graphQLRequest } from './request';
 
 export const foldersLoader = async () => {
-  try {
-    const query = `query Folders {
-        folders {
-          id
-          name
-          createdAt
-        }
-      }`;
-  
-    const data = await graphQLRequest({ query });
-    return data;
-  } catch(err) {
-    return null;
-  }
+  const query = `query Folders {
+    folders {
+      id
+      name
+      createdAt
+    }
+  }`;
+
+  const data = await graphQLRequest({ query });
+  return data;
 };
 
 export const addNewFolder = async (newFolder) => {

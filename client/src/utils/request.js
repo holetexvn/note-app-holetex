@@ -16,4 +16,6 @@ export const graphQLRequest = async (payload, options = {}) => {
     const { data } = await res.json();
     return data;
   }
+
+  return null;
 };
