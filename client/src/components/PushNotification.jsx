@@ -25,13 +25,13 @@ export default function PushNotification() {
     setAnchorEl(null);
     setNotification('');
     setInvisible(true);
-  }
+  };
 
   const handleClick = (e) => {
     if (notification) {
       setAnchorEl(e.currentTarget);
     }
-  }
+  };
 
   useEffect(() => {
     (async () => {
@@ -60,16 +60,18 @@ export default function PushNotification() {
 
   return (
     <>
-    <Badge color='secondary' variant='dot' invisible={invisible}>
-      <NotificationsIcon onClick={handleClick}/>
-    </Badge>
-    <Menu
-      anchorEl={anchorEl}
-      open={open}
-      onClose={handleClose}
-    >
-      <MenuItem onClick={handleClose}>{notification}</MenuItem>
-    </Menu>
+      <Badge
+        color='error'
+        variant='dot'
+        invisible={invisible}
+        overlap='circular'
+        sx={{ '&:hover': { cursor: 'pointer' }, ml: '5px' }}
+      >
+        <NotificationsIcon onClick={handleClick} sx={{ color: '#7D9D9C' }} />
+      </Badge>
+      <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+        <MenuItem onClick={handleClose}>{notification}</MenuItem>
+      </Menu>
     </>
   );
 }

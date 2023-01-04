@@ -33,8 +33,7 @@ export default function Login() {
     console.log('register', { data });
   };
 
-  if (user?.uid) {
-    // navigate('/');
+  if (localStorage.getItem('accessToken')) {
     return <Navigate to="/" />
   }
 
